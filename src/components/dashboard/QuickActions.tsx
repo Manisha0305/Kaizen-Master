@@ -8,7 +8,7 @@ const actions = [
     icon: Plus,
     variant: "default" as const,
     className: "bg-gradient-forest hover:opacity-90",
-    link: "/improvements",
+    link: "/Kaizen-Master/improvements",
   },
   {
     label: "Quick Win",
@@ -21,7 +21,7 @@ const actions = [
     icon: Target,
     variant: "outline" as const,
     className: "",
-    link: "/Goals",
+    link: "/Kaizen-Master/Goals",
   },
   {
     label: "Reflect",

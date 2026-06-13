@@ -13,7 +13,6 @@ import Journal from "./pages/Journal";
 import Settings from "./pages/Settings";
 import ProfileForm from "./pages/ProfileForm";
 import HistoryTable from "./pages/HistoryTable";
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -22,8 +21,8 @@ const App = () => (
       <Toaster />
       <Sonner />
      
-      <BrowserRouter>
-       <Sidebar />
+      <BrowserRouter basename="/Kaizen-Master">
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/Habits" element={<Habits />} />
@@ -33,7 +32,6 @@ const App = () => (
           <Route path="/settings" element={<Settings />} />
           <Route path="/Profile" element={<ProfileForm />} />
           <Route path="/history" element={<HistoryTable />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
