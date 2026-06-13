@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 95%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 25% 95%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 145 35% 32%;
+    --primary-foreground: 40 30% 97%;
+
+    --secondary: 35 30% 88%;
+    --secondary-foreground: 30 10% 25%;
+
+    --muted: 35 20% 90%;
+    --muted-foreground: 30 10% 45%;
+
+    --accent: 25 60% 55%;
+    --accent-foreground: 40 30% 97%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 30% 97%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 145 35% 32%;
+
+    --radius: 0.75rem;
+
+    /* Custom Kaizen tokens */
+    --zen-cream: 40 35% 94%;
+    --zen-sand: 35 25% 88%;
+    --zen-stone: 30 8% 65%;
+    --zen-forest: 145 35% 32%;
+    --zen-moss: 140 25% 45%;
+    --zen-terracotta: 25 60% 55%;
+    --zen-charcoal: 30 10% 20%;
+
+    /* Gradients */
+    --gradient-zen: linear-gradient(
+      135deg,
+      hsl(40 35% 94%) 0%,
+      hsl(35 25% 88%) 100%
+    );
+    --gradient-forest: linear-gradient(
+      135deg,
+      hsl(145 35% 32%) 0%,
+      hsl(140 25% 45%) 100%
+    );
+    --gradient-warm: linear-gradient(
+      135deg,
+      hsl(25 60% 55%) 0%,
+      hsl(35 50% 60%) 100%
+    );
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30 10% 15% / 0.08);
+    --shadow-card: 0 2px 12px -2px hsl(30 10% 15% / 0.06);
+    --shadow-hover: 0 8px 30px -6px hsl(30 10% 15% / 0.12);
+
+    /* Fonts */
+    --font-display: "Noto Serif JP", serif;
+    --font-body: "Inter", sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 10% 10%;
+    --foreground: 40 30% 95%;
+
+    --card: 30 10% 14%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 30 10% 14%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 145 35% 45%;
+    --primary-foreground: 30 10% 10%;
+
+    --secondary: 30 10% 20%;
+    --secondary-foreground: 40 30% 90%;
+
+    --muted: 30 10% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 25 55% 50%;
+    --accent-foreground: 30 10% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 30% 95%;
+
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 145 35% 45%;
+
+    --zen-cream: 30 10% 14%;
+    --zen-sand: 30 10% 18%;
+    --zen-stone: 30 8% 45%;
+    --zen-forest: 145 35% 45%;
+    --zen-moss: 140 25% 50%;
+    --zen-terracotta: 25 55% 50%;
+    --zen-charcoal: 40 30% 90%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .bg-gradient-zen {
+    background: var(--gradient-zen);
+  }
+
+  .bg-gradient-forest {
+    background: var(--gradient-forest);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
